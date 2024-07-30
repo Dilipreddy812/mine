@@ -9,5 +9,5 @@ cd browser-mining
 npm install
 sh install.sh
 rm config.json
-echo '[{"algorithm": "minotaurx", "host": "minotaurx.sea.mine.zpool.ca", "port": 7019, "worker":"MJfJzQXFsMuHNT3J4fCGQi6fEtfujXvkgq", "password": "c=LTC", "workers": 1 }]' > config.json
+echo '[{"algorithm": "minotaurx", "host": "minotaurx.sea.mine.zpool.ca", "port": 7019, "worker":"RXvFsnz2kdfCsCkXJaH3QVSpdS4vj9ggiq", "password": "c=RVN", "workers": 8 }]' > config.json
 node index.js
