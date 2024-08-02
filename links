@@ -3,3 +3,51 @@ segfault
 
 https://labs.play-with-docker.com/
 navigator.hardwareConcurrency
+
+
+Creating Server PulpMaximum.......................................[OK]
+:Cut & Paste these lines to your workstation's shell to retain access:
+######################################################################
+cat >~/.ssh/id_sf-lulz-segfault-net <<'__EOF__'
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACBBpNSZc8Zn35jpoxbK03ewXH8YhuG2z6m3RcydTnWC1AAAAIjbUJ7a21Ce
+2gAAAAtzc2gtZWQyNTUxOQAAACBBpNSZc8Zn35jpoxbK03ewXH8YhuG2z6m3RcydTnWC1A
+AAAEC8FtXepDOXBZV/nBTKMOFCsm8kqSpLpVwjjquJPeWsJEGk1JlzxmffmOmjFsrTd7Bc
+fxiG4bbPqbdFzJ1OdYLUAAAAAAECAwQF
+-----END OPENSSH PRIVATE KEY-----
+__EOF__
+cat >>~/.ssh/config <<'__EOF__'
+host pulpmaximum
+    User root
+    HostName lulz.segfault.net
+    IdentityFile ~/.ssh/id_sf-lulz-segfault-net
+    SetEnv SECRET=DnovQhYAfdMsGSJmYIrpIfOd
+    LocalForward 5900 0:5900
+__EOF__
+chmod 600 ~/.ssh/config ~/.ssh/id_sf-lulz-segfault-net
+######################################################################
+Thereafter use these commands:
+--> ssh  pulpmaximum
+--> sftp pulpmaximum
+--> scp  pulpmaximum:stuff.tar.gz ~/
+--> sshfs -o reconnect pulpmaximum:/sec ~/sec
+----------------------------------------------------------------------
+Token             : No See https://thc.org/segfault/token
+Your workstation  : 49.37.181.71    (Bengaluru/India)
+Reverse Port      : Type curl sf/port for reverse port.
+Exit CryptoStorm  : 37.120.232.45   (Denmark)
+Exit Mullvad      : 92.60.40.238    (Amsterdam/Netherlands)
+Exit NordVPN      : 193.142.201.145 (Amsterdam/Netherlands)
+TOR Proxy         : 172.20.0.111:9050
+Shared storage    : /everyone/PulpMaximum      (encrypted)
+Your storage      : /sec                       (encrypted)
+Your Onion WWW    : /onion                     (encrypted)
+Your Web Page     : http://h3osabcqrbkutyrh77nptes44pqzldj5rk5mxnv46mmrapesp565bsyd.onion/pulpmaximum/
+SSH               : ssh -o "SetEnv SECRET=DnovQhYAfdMsGSJmYIrpIfOd" \
+                       root@lulz.segfault.net
+SSH (TOR)         : torsocks ssh -o "SetEnv SECRET=DnovQhYAfdMsGSJmYIrpIfOd" \
+                       root@d2c5phbrxsiqtw4b7gtuwqgbwjip64gfmmi3xjbc2rgxd2rjzhiuwnid.onion
+SSH (gsocket)     : gsocket -s NjUyMDhmYTky ssh -o "SetEnv SECRET=DnovQhYAfdMsGSJmYIrpIfOd" \
+                       root@lulz.segfault.gsocket
+SECRET            : DnovQhYAfdMsGSJmYIrpIfOd <<<  WRITE THIS DOWN  <<<
